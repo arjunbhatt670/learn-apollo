@@ -5,10 +5,10 @@ import { ButtonProps } from "./Button.types";
 import { Container } from "./styles";
 
 const Button: React.FC<ButtonProps> = props => {
-    const { Text, styles, onClick, loading } = props;
+    const { Text, styles, onClick, loading, ...rest } = props;
 
     return (
-        <Container style={styles} onClick={onClick}>
+        <Container style={styles} onClick={onClick} {...rest}>
             {loading ? <Loading /> : Text}
         </Container>
     );

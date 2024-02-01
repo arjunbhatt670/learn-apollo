@@ -1,5 +1,5 @@
-import "./index.css";
 import "./storybook.css";
+import "./index.css";
 
 import React from "react";
 

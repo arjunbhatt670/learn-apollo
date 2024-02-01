@@ -14,7 +14,7 @@ export const getApolloClient = async (): Promise<ApolloClient<any>> => {
         link,
         cache,
         connectToDevTools: process.env.NODE_ENV === "development",
-        typeDefs,
+        // typeDefs,
     });
 
     client = apolloClient;
