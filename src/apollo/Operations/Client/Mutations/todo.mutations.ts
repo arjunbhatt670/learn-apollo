@@ -9,3 +9,13 @@ export const ADD_TODO = gql`
         }
     }
 `;
+
+export const DELETE_TODO = gql`
+    mutation DeleteTodo($id: Int) {
+        delete_todos(where: { id: { _eq: $id } }) {
+            returning {
+                ...TodoFields
+            }
+        }
+    }
+`;

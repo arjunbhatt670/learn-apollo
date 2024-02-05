@@ -9,7 +9,7 @@ const CreateTodo = () => {
     const [todo, setTodo] = useState("");
     const inputRef = useRef(null);
 
-    const [addTodo, { loading: isCreatingTodo }] = useMutation(ADD_TODO, {
+    const [addTodo, { loading: isCreatingTodo, reset }] = useMutation(ADD_TODO, {
         update: (cache, result) => {
             const { todos } = cache.readQuery({
                 query: USER_TODOS,
@@ -48,10 +48,9 @@ const CreateTodo = () => {
                                             ],
                                         },
                                     },
-                                }).then(() => {
-                                    setTodo("");
-                                    setIsCreate(false);
                                 });
+                                setTodo("");
+                                setIsCreate(false);
                             }
                         } else {
                             setIsCreate(true);
